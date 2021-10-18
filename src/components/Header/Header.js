@@ -6,7 +6,29 @@ import { Link, NavLink } from 'react-router-dom';
 const Header = () => {
     return (
         <div>
-            <Navbar bg="dark" variant="dark">
+            <Navbar bg="dark" variant="dark" sticky="top" collapseOnSelect expand="lg">
+                <Container>
+                <Navbar.Brand as={Link} to="/home">KushtiaHealthCareCenter</Navbar.Brand>
+                <Navbar.Toggle />
+                <Navbar.Collapse className="justify-content-end">
+                <Nav.Link as={Link} to="/home">Home</Nav.Link>
+                <Nav.Link as={Link} to="/services">Services</Nav.Link>
+                <Nav.Link as={Link} to="/doctors">Doctors</Nav.Link>
+                <Nav.Link as={Link} to="/appointments">Appointments</Nav.Link>
+                <Nav.Link as={Link} to="/login">Login</Nav.Link>
+                <Navbar.Text>
+                    Signed in as: <a href="/login">Mark Otto</a>
+                </Navbar.Text>
+                </Navbar.Collapse>
+                <Nav className="me-auto">
+                
+                </Nav>
+                </Container>
+            </Navbar>
+
+
+
+            {/* <Navbar bg="dark" variant="dark">
     <Container>
     <Navbar.Brand href="/home">KushtiaHealthCare</Navbar.Brand>
     <Nav className="me-auto">
@@ -18,7 +40,7 @@ const Header = () => {
       <Link className="me-3 text-decoration-none text-white" to="/login">Login</Link>
     </Nav>
     </Container>
-  </Navbar>
+  </Navbar> */}
 
   
             {/* <nav>
