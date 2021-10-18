@@ -1,9 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import useFirebase from '../../hook/useFirebase';
+import "./Login.css";
 
 const Login = () => {
+    const {signInUsingGoogle} = useFirebase();
     return (
-        <div>
-            <h1>Login</h1>
+        <div className="login-form">
+            <h1>Please Login</h1>
+            <br /><br />
+            <button onClick={signInUsingGoogle} className="btn btn-secondary">Sign in with Google</button>
+            <br /><br />
+            ----------------------
+            <br />
+            <Link to="/regester">Please Regester in case of New Patient?</Link>
         </div>
     );
 };
