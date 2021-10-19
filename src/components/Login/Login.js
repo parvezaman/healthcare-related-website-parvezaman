@@ -16,7 +16,7 @@ const Login = () => {
             <br /><br />
             ----------------------
             <br />
-            <Link to="/regester">Please Regester in case of New Patient?</Link>
+            <Link to="/regester">Click here if you want to sign in / sign up using Email/Password</Link>
         </div>
     );
 };

@@ -1,0 +1,15 @@
+.service-card{
+    width: 350px;
+    border: 2px solid gray;
+    text-align: center;
+    margin: 20px;
+    background-color: lavender;
+    border-radius: 9px;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .service-card {
+      margin: 5px;
+    }
+  }

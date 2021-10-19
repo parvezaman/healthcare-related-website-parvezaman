@@ -2,6 +2,11 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 
+// import React from 'react';
+// import { Link } from 'react-router-dom';
+// import useAuth from '../../hook/useAuth';
+import useFirebase from '../../hook/useFirebase';
+
 import "./Regester.css";
 
 const Regester = () => {
@@ -11,6 +16,8 @@ const Regester = () => {
     const [password, setPassword] = useState("");
     const [error, setError] = useState('');
     const [isLogin, setIsLogin] = useState(false);
+
+    
     const handleRegestration = (e)=>{
         e.preventDefault();
 
@@ -63,7 +70,6 @@ const Regester = () => {
    
     return (
         <div className="regestration-form mx-5">
-           <h1>Regester if you don't have account with us</h1> 
            <br /><br />
 
            <form onSubmit={handleRegestration}>
@@ -95,16 +101,10 @@ const Regester = () => {
             <button type="submit" className="btn btn-primary">{isLogin ? "Login" : "Regester"}</button>
             </form>
 
-           <form>
-            <input type="email" name="" id="" placeholder="Your email" />
-            <br />
-            <input type="password" name="" id="" placeholder="Your password" />
-            <br /><br />
-            <input type="submit" value="Submit" className="btn btn-success"/>
-           </form>
+           
            -----------------------------------------------------
            <br />
-           <Link to="/login">Please login if you are a Regestered Patient</Link>
+           <Link to="/login">Click here if you want to sign in with google</Link>
         </div>
     );
 };
