@@ -1,0 +1,14 @@
+.doctor-container{
+    /* background-color: lavender; */
+    border: 2px solid gray;
+    text-align: center;
+    width: 350px;
+    margin: 15px;
+    border-radius: 9px;
+}
+
+@media only screen and (max-width: 600px) {
+    .doctor-container{
+      margin: 5px;
+    }
+  }

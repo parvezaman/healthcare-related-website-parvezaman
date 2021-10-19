@@ -12,6 +12,7 @@ import Regester from './components/Regester/Regester';
 import AuthProvider from './context/AuthProvider';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import Banner from './components/Banner/Banner';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -23,19 +24,24 @@ function App() {
           <Route exact path='/'>
             <Banner/>
             <Home></Home>
+            <Footer/>
             <Services></Services>
+            <Doctors/>
+            <Footer/>
           </Route>
           <Route path='/home'>
           <Banner/>
             <Home></Home>
             <Services></Services>
+            <Doctors/>
+            <Footer/>
           </Route>
           {/* <Route path='/services'>
             
           </Route> */}
-          <Route path='/doctors'>
+          {/* <Route path='/doctors'>
             <Doctors></Doctors>
-          </Route>
+          </Route> */}
           <PrivateRoute path='/appointments'>
             <Appointments></Appointments>
           </PrivateRoute>
