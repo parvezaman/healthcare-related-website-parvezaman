@@ -10,6 +10,9 @@ const Services = () => {
         .then(res => res.json())
         .then(data => setServices(data))
     },[])
+    const showDetails =()=>{
+        console.log('clicked');
+    }
     return (
         <div >
             <h1 className="text-center text-primary">Our services</h1>
@@ -18,6 +21,7 @@ const Services = () => {
                     services.map(service => <Service
                     key={service.id}
                     service={service}
+                    showDetails={showDetails}
                     ></Service>)
                 }
             </div>

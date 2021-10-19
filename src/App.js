@@ -13,6 +13,7 @@ import AuthProvider from './context/AuthProvider';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import Banner from './components/Banner/Banner';
 import Footer from './components/Footer/Footer';
+import Reports from './components/Reports/Reports';
 
 function App() {
   return (
@@ -24,7 +25,6 @@ function App() {
           <Route exact path='/'>
             <Banner/>
             <Home></Home>
-            <Footer/>
             <Services></Services>
             <Doctors/>
             <Footer/>
@@ -36,12 +36,9 @@ function App() {
             <Doctors/>
             <Footer/>
           </Route>
-          {/* <Route path='/services'>
-            
-          </Route> */}
-          {/* <Route path='/doctors'>
-            <Doctors></Doctors>
-          </Route> */}
+          <PrivateRoute path='/reports'>
+            <Reports/>
+          </PrivateRoute>
           <PrivateRoute path='/appointments'>
             <Appointments></Appointments>
           </PrivateRoute>
