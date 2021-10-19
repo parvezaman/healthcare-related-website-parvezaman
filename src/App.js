@@ -11,6 +11,7 @@ import Login from './components/Login/Login';
 import Regester from './components/Regester/Regester';
 import AuthProvider from './context/AuthProvider';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
+import Banner from './components/Banner/Banner';
 
 function App() {
   return (
@@ -20,14 +21,18 @@ function App() {
         <Header></Header>
         <Switch>
           <Route exact path='/'>
+            <Banner/>
             <Home></Home>
-          </Route>
-          <Route path='/home'>
-            <Home></Home>
-          </Route>
-          <Route path='/services'>
             <Services></Services>
           </Route>
+          <Route path='/home'>
+          <Banner/>
+            <Home></Home>
+            <Services></Services>
+          </Route>
+          {/* <Route path='/services'>
+            
+          </Route> */}
           <Route path='/doctors'>
             <Doctors></Doctors>
           </Route>
