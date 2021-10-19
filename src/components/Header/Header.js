@@ -1,11 +1,17 @@
 import React from 'react';
 import './Header.css';
 import { Container, Nav, Navbar } from 'react-bootstrap';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+// import useFirebase from '../../hook/useFirebase';
+import useAuth from '../../hook/useAuth';
 import useFirebase from '../../hook/useFirebase';
 
 const Header = () => {
+    // const {user, signOutFromGoogle } = useAuth();
     const {user, signOutFromGoogle } = useFirebase();
+    // export let userMail = user.email;
+    // console.log(user);
+
     return (
         <div>
             <Navbar bg="dark" variant="dark" sticky="top" collapseOnSelect expand="lg">
@@ -18,6 +24,8 @@ const Header = () => {
                 <Nav.Link as={Link} to="/doctors">Doctors</Nav.Link>
                 <Nav.Link as={Link} to="/appointments">Appointments</Nav.Link>
                 <Nav.Link as={Link} to="/login">Login</Nav.Link>
+                {/* {console.log(user.email)} */}
+                {/* {return user.email} */}
                 {user.email && <Navbar.Text>
                     Signed in as: <a href="/login">{user.displayName}</a>
                 </Navbar.Text>}
@@ -29,7 +37,9 @@ const Header = () => {
                 </Container>
             </Navbar>
 
-
+            {/* const userMail =()=>{
+                const eserEmail = user.email;
+            } */}
 
             {/* <Navbar bg="dark" variant="dark">
     <Container>

@@ -9,40 +9,48 @@ import Doctors from './components/Doctors/Doctors';
 import Appointments from './components/Appointments/Appointments';
 import Login from './components/Login/Login';
 import Regester from './components/Regester/Regester';
+import AuthProvider from './context/AuthProvider';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 function App() {
   return (
     <div>
+      
       <BrowserRouter>
-      <Header></Header>
-      <Switch>
-        <Route exact path='/'>
-          <Home></Home>
-        </Route>
-        <Route path='/home'>
-          <Home></Home>
-        </Route>
-        <Route path='/services'>
-          <Services></Services>
-        </Route>
-        <Route path='/doctors'>
-          <Doctors></Doctors>
-        </Route>
-        <Route path='/appointments'>
-          <Appointments></Appointments>
-        </Route>
-        <Route path='/login'>
-          <Login></Login>
-        </Route>
-        <Route path='/regester'>
-          <Regester></Regester>
-        </Route>
-        <Route path='*'>
-          <NotFound></NotFound>
-        </Route>
+        <Header></Header>
+        <Switch>
+          <Route exact path='/'>
+            <Home></Home>
+          </Route>
+          <Route path='/home'>
+            <Home></Home>
+          </Route>
+          <Route path='/services'>
+            <Services></Services>
+          </Route>
+          <Route path='/doctors'>
+            <Doctors></Doctors>
+          </Route>
+          <PrivateRoute path='/appointments'>
+            <Appointments></Appointments>
+          </PrivateRoute>
+          <Route path='/login'>
+            <Login></Login>
+          </Route>
+          <Route path='/regester'>
+            <Regester></Regester>
+          </Route>
+          <Route path='*'>
+            <NotFound></NotFound>
+          </Route>
 
-      </Switch>
-      </BrowserRouter>
+        </Switch>
+        </BrowserRouter>
+
+
+      {/* <AuthProvider>
+        
+      </AuthProvider> */}
     </div>
   );
 }
